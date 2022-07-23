@@ -1,9 +1,10 @@
+from email.policy import default
 from django.contrib.auth.models import AbstractUser
 from django.db import models
 from colorful.fields import RGBColorField
 
 class User(AbstractUser):
-    userColour = RGBColorField()
+    userColour = RGBColorField(default='#FF9000')
 
 class Post(models.Model):
     user = models.ForeignKey("User", on_delete=models.CASCADE, related_name="post")
