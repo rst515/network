@@ -4,7 +4,7 @@ info:
   title: Template
   description: An set of APIs for the service
 servers:
-  - url: https://gucw96dgqd.execute-api.eu-west-1.amazonaws.com/Prod
+  - url: https://my.api.server.com/
     description: Staging
 paths:
 
@@ -123,7 +123,7 @@ paths:
         - cognitoUsers: []
       x-amazon-apigateway-integration:
         uri:
-          Fn::Sub: arn:aws:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${BaysGetById.Arn}/invocations
+          Fn::Sub: arn:aws:invocations
         passthroughBehavior: when_no_match
         httpMethod: POST
         type: aws_proxy
